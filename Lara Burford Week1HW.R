@@ -7,4 +7,4 @@
 ##    PostgreSQL 9.3
 
 ## 3. How many observations are contained in the data set sales?
-##    4011046 obs. of 5 variables
+##    401146 obs. of 5 variables
