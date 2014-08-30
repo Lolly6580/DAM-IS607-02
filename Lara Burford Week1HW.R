@@ -4,7 +4,7 @@
 ##    R Studio Version 0.98.1028 - © 2009-2013 RStudio, Inc.
 
 ## 2. What version of PostgreSQL do you have installed?
-##
+##    PostgreSQL 9.3
 
 ## 3. How many observations are contained in the data set sales?
 ##    4011046 obs. of 5 variables
