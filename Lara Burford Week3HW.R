@@ -110,7 +110,7 @@ distinctFunction <- function(vector1)
   return(specList2)
 }
 
-V5 <- c("circle",NA,NA, "square","circle", "square","octagon", "square",NA,"triangle","circle","triangle","square","circle")
+V5 <- as.factor(c("circle",NA,NA, "square","circle", "square","octagon", "square",NA,"triangle","circle","triangle","square","circle"))
 distinctFunction(V5)
 V6 <- c("circle",NA,NA, "square", "square","octagon", "square",NA,"triangle","circle","triangle","square","circle")
 distinctFunction(V6)
@@ -141,30 +141,28 @@ summaryFunction <- function(df1)
     if(is.numeric(df1[[i]]) == TRUE)
     {
       Vsum <- specFunction(df1[i])
-      names(Vsum) <- "Numbers"
       summaryList[[length(summaryList)+1]] <- Vsum
       
     }
     else if(is.logical(df1[[i]]) == TRUE)
     {
       Vsum <- booleanFunction(df1[i])
-      names(Vsum) <- "Boolean"
       summaryList[[length(summaryList)+1]] <- Vsum
       
     }
     else
     {
       Vsum <- distinctFunction(df1[i])
-      names(Vsum) <- "Character or Factor"
-      summaryList[[length(summaryList)+1]] <- Vsum
-      
+      summaryList[[length(summaryList)+1]] <- Vsum      
     }
   }
+  names(summaryList) <- names(df1)
   return(summaryList)
 }
 
 V1 <- c(24,16,NA,11,NA,5,24,7,23,20,18,18,11)
 V2 <- c(TRUE, FALSE, FALSE, FALSE, TRUE, NA, NA, TRUE, TRUE, TRUE, TRUE,TRUE,TRUE)
 V3 <- c("circle",NA,NA, "square", "square","octagon", "square",NA,"triangle","circle","triangle","square","circle")
-dataframeX <- data.frame(Numbers = V1, Shapes = V2, Boolean = V3)
+V4 <- as.factor(c("circle",NA,NA, "square","circle", "square","square",NA,"triangle","circle","triangle","square","circle"))
+dataframeX <- data.frame(Vector1 = V1, Vector2 = V2, Vector3 = V3, Vector4 = V4)
 final <- summaryFunction(dataframeX)
