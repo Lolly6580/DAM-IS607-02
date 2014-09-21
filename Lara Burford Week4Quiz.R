@@ -6,29 +6,29 @@ head(movies)
 
 #1. Show an appropriate visualization that displays the total number of movies for each decade.
 count <- c()
-decade1 <- movies[movies$year > 1890 & movies$year <= 1900]
+decade1 <- movies$year[movies$year > 1890 & movies$year <= 1900]
 count <- c(count, length(decade1))
-decade2 <- movies[movies$year > 1900 & movies$year <= 1910]
+decade2 <- movies$year[movies$year > 1900 & movies$year <= 1910]
 count <- c(count, length(decade2))
-decade3 <- movies[movies$year > 1910 & movies$year <= 1920]
+decade3 <- movies$year[movies$year > 1910 & movies$year <= 1920]
 count <- c(count, length(decade3))
-decade4 <- movies[movies$year > 1920 & movies$year <= 1930]
+decade4 <- movies$year[movies$year > 1920 & movies$year <= 1930]
 count <- c(count, length(decade4))
-decade5 <- movies[movies$year > 1930 & movies$year <= 1940]
+decade5 <- movies$year[movies$year > 1930 & movies$year <= 1940]
 count <- c(count, length(decade5))
-decade6 <- movies[movies$year > 1940 & movies$year <= 1950]
+decade6 <- movies$year[movies$year > 1940 & movies$year <= 1950]
 count <- c(count, length(decade6))
-decade7 <- movies[movies$year > 1950 & movies$year <= 1960]
+decade7 <- movies$year[movies$year > 1950 & movies$year <= 1960]
 count <- c(count, length(decade7))
-decade8 <- movies[movies$year > 1960 & movies$year <= 1970]
+decade8 <- movies$year[movies$year > 1960 & movies$year <= 1970]
 count <- c(count, length(decade8))
-decade9 <- movies[movies$year > 1970 & movies$year <= 1980]
+decade9 <- movies$year[movies$year > 1970 & movies$year <= 1980]
 count <- c(count, length(decade9))
-decade10 <- movies[movies$year > 1980 & movies$year <= 1990]
+decade10 <- movies$year[movies$year > 1980 & movies$year <= 1990]
 count <- c(count, length(decade10))
-decade11 <- movies[movies$year > 1990 & movies$year <= 2000]
+decade11 <- movies$year[movies$year > 1990 & movies$year <= 2000]
 count <- c(count, length(decade11))
-decade12 <- movies[movies$year > 2000 & movies$year <= 2010]
+decade12 <- movies$year[movies$year > 2000 & movies$year <= 2010]
 count <- c(count, length(decade12))
 
 decades <- c("1890-1900"= length(decade1), "1901-1910"= length(decade2),"1911-1920"= length(decade3),"1921-1930"= length(decade4),"1931-1940"= length(decade5),"1941-1950"= length(decade6),"1951-1960"= length(decade7),"1961-1970"= length(decade8),"1971-1980"= length(decade9),"1981-1990"= length(decade10),"1991-2000"= length(decade11),"2001-2010"= length(decade12))
