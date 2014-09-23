@@ -1,0 +1,27 @@
+---
+title: "Lara Burford Week 4 HW"
+output: html_document
+---
+Based on my analysis of the movies data set, I believe that the "best popular" movies were made in 1999.  First, I reviewed the data in order by rating, but the top movies were ones that I had never heard of before.  I noticed that the ratings were high, but that in many cases the number of votes was very small.  I decided that best popular must be a combination of the most votes and highest rating.  I used R to narrow my dataset to the top 20 movies based on both rating and number of votes.  In 1999, 4 of those 20 movies were made.  There were no years in which 3 movies made the top 20, a tied for 1994, 1995, and 2000 for 2 movies in the top 20, and the balance of years had just a single movie in the top 20.
+
+I produced a bar graph showing my results from the ggplot2 package, and I used the count function from the plyr package to count the number of movies that made top 20 for each year.
+
+
+```{r}
+require(ggplot2)
+require(plyr)
+data(movies)
+head(movies)
+
+max(movies$votes)
+min(movies$votes)
+toprated <- subset(movies, movies$rating >= 8 & movies$votes >= 90000)
+toprated <- toprated[order(toprated$year),]
+yearCount <- count(toprated, "year")
+
+years <- c("1972"= yearCount[1,2], "1977"= yearCount[2,2],"1980"= yearCount[3,2],"1981"= yearCount[4,2],"1991"= yearCount[5,2],"1993"= yearCount[6,2],"1994"=yearCount[7,2],"1995"= yearCount[8,2],"1998"= yearCount[9,2],"1999"= yearCount[10,2],"2000"= yearCount[11,2],"2001"= yearCount[12,2])
+barplot(years, main = "Top 20 Best Popular Movies", xlab = "Year", ylab = "Total Movies")
+
+```
+
+
