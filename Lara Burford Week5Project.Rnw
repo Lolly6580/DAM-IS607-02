@@ -1,0 +1,10 @@
+\documentclass{article}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+require(Hmisc)
+summary <- describe(gendergenerationdata)
+texsummary <- latex(summary, file = "describe.tex")
+text2 <- "\\documentclass{article}\n\\usepackage{relsize,setspace}\n\\begin{document}\n\\input{describe.tex} \n\\end{document}"
+cat(text2, file = "Hmisc_describe_report.tex")
+\end{document}
